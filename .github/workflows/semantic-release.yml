@@ -1,0 +1,43 @@
+name: Semantic Release
+on:
+  push:
+    branches:
+      - main
+
+permissions: 
+  contents: read
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Semantic Release
+        uses: codfish/semantic-release-action@v3
+        id: semantic_release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          dry-run: true
+          plugins: |
+            [
+              "@semantic-release/commit-analyzer",
+              "@semantic-release/release-notes-generator",
+              "@semantic-release/changelog",
+              "@semantic-release/github"   
+            ]
+          additional-packages: |
+            [
+              "@semantic-release/changelog"
+            ]
+      - name: Create Release
+        if: steps.semantic_release.outputs.new-release-published == 'true'
+        run: |
+          echo "Release $RELEASE_VERSION created"
