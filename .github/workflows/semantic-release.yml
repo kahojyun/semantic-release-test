@@ -32,15 +32,18 @@ jobs:
               "@semantic-release/commit-analyzer",
               "@semantic-release/release-notes-generator",
               "@semantic-release/changelog",
+              [
+                "@semantic-release/exec",
+                {
+                  "prepareCmd": "echo ${nextRelease.version} > VERSION.txt",
+                }
+              ],
               "@semantic-release/git",
-              "@semantic-release/github"   
+              "@semantic-release/github",
             ]
           additional-packages: |
             [
               "@semantic-release/git",
-              "@semantic-release/changelog"
+              "@semantic-release/changelog",
+              "@semantic-release/exec",
             ]
-      - name: Build package
-        if: steps.semantic_release.outputs.new-release-published == 'true'
-        run: |
-          echo "Release $RELEASE_VERSION created"
