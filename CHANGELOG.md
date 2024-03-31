@@ -1,3 +1,15 @@
+# [2.0.0-alpha.1](https://github.com/kahojyun/semantic-release-test/compare/v1.0.0...v2.0.0-alpha.1) (2024-03-31)
+
+
+### Features
+
+* specify name in greetings ([71c4f11](https://github.com/kahojyun/semantic-release-test/commit/71c4f119927076aff21858d9674ba634209cc5f6))
+
+
+### BREAKING CHANGES
+
+* new arguments in `hello` and `goodbye`
+
 # 1.0.0 (2024-03-31)
 
 
