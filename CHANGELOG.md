@@ -1,3 +1,10 @@
+# [1.0.0-alpha.5](https://github.com/kahojyun/semantic-release-test/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2024-03-31)
+
+
+### Features
+
+* implement add ([#1](https://github.com/kahojyun/semantic-release-test/issues/1)) ([729cae4](https://github.com/kahojyun/semantic-release-test/commit/729cae44033995ef1bec50d4230ac674480dbd73))
+
 # [1.0.0-alpha.4](https://github.com/kahojyun/semantic-release-test/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2024-03-31)
 
 
