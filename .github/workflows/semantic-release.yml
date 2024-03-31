@@ -11,6 +11,7 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
+    environment: release
     permissions:
       contents: write
       issues: write
@@ -24,21 +25,22 @@ jobs:
         uses: codfish/semantic-release-action@v3
         id: semantic_release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.AUTO_RELEASE }}
         with:
-          dry-run: true
           plugins: |
             [
               "@semantic-release/commit-analyzer",
               "@semantic-release/release-notes-generator",
               "@semantic-release/changelog",
+              "@semantic-release/git",
               "@semantic-release/github"   
             ]
           additional-packages: |
             [
+              "@semantic-release/git",
               "@semantic-release/changelog"
             ]
-      - name: Create Release
+      - name: Build package
         if: steps.semantic_release.outputs.new-release-published == 'true'
         run: |
           echo "Release $RELEASE_VERSION created"
