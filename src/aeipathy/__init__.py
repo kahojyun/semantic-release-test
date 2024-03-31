@@ -1,7 +1,10 @@
 """The aeipathy package."""
 
-def hello() -> None:
-    return "Hello, world!"
+def hello(name: str):
+    return f"Hello, {name}!"
 
 def add(a, b):
     return a + b
+
+def multiply(a, b):
+    return a * b
