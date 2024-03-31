@@ -1,3 +1,10 @@
+# [1.0.0-alpha.6](https://github.com/kahojyun/semantic-release-test/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2024-03-31)
+
+
+### Features
+
+* push to main ([bf47dd1](https://github.com/kahojyun/semantic-release-test/commit/bf47dd192446c6d5bbf1f8bbf1066c99cd949664))
+
 # [1.0.0-alpha.5](https://github.com/kahojyun/semantic-release-test/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2024-03-31)
 
 
