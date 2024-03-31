@@ -38,7 +38,15 @@ jobs:
                   "prepareCmd": "echo ${nextRelease.version} > VERSION.txt",
                 }
               ],
-              "@semantic-release/git",
+              [
+                "@semantic-release/git",
+                {
+                  "assets": [
+                    "VERSION.txt",
+                    "CHANGELOG.md"
+                  ],
+                }
+              ],
               "@semantic-release/github",
             ]
           additional-packages: |
