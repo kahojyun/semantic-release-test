@@ -1,10 +1,10 @@
 """The aeipathy package."""
 
-def hello():
-    return "Hello, world!"
+def hello(name: str):
+    return f"Hello, {name}!"
 
-def goodbye():
-    return "Goodbye, world!"
+def goodbye(name: str):
+    return f"Goodbye, {name}!"
 
 def add(a, b):
     return a + b
