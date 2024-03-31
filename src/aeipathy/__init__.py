@@ -1,9 +1,9 @@
 """The aeipathy package."""
 
-def hello():
+def hello() -> None:
     return "Hello, world!"
 
-def goodbye():
+def goodbye() -> None:
     return "Goodbye, world!"
 
 def add(a, b):
