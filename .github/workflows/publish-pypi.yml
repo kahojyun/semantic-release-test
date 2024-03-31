@@ -43,7 +43,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Write version to file
-      run: echo ${{ needs.release.outputs.version }} > version.txt
+      run: echo ${{ needs.release.outputs.version }} > VERSION.txt
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
