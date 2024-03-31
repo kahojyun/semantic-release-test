@@ -1,3 +1,10 @@
+# [1.0.0-alpha.4](https://github.com/kahojyun/semantic-release-test/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2024-03-31)
+
+
+### Bug Fixes
+
+* include version.txt in semantic release ci ([4b5a80b](https://github.com/kahojyun/semantic-release-test/commit/4b5a80b6154dfc957b04b2c8d16b39ffb8dcee8d))
+
 # [1.0.0-alpha.3](https://github.com/kahojyun/semantic-release-test/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2024-03-31)
 
 
