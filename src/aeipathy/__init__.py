@@ -2,3 +2,6 @@
 
 def hello():
     return "Hello, world!"
+
+def goodbye():
+    return "Goodbye, world!"
