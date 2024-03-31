@@ -5,3 +5,6 @@ def hello():
 
 def goodbye():
     return "Goodbye, world!"
+
+def add(a, b):
+    return a + b
