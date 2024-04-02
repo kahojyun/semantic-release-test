@@ -20,21 +20,18 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 'lts/*'
-      - name: Install dependencies
-        run: npm install -g semantic-release@23 @semantic-release/exec
       - name: Semantic Release
+        uses: docker://ghcr.io/codfish/semantic-release-action@sha256:9e0bbcc4ca3b3611668dcf911e51432573efb3222587c4ca1cc8a759c1b8283c # v3.1.1
         id: semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release
-      - name: view outputs
-        run: |
-          echo "Release version: ${{ steps.semantic-release.outputs.release-version }}"
-          echo "New release published: ${{ steps.semantic-release.outputs.new-release-published }}"
+        with:
+          plugins: |
+            [
+              "@semantic-release/commit-analyzer",
+              "@semantic-release/release-notes-generator",
+              "@semantic-release/github",
+            ]
     outputs:
       version: ${{ steps.semantic-release.outputs.release-version }}
       published: ${{ steps.semantic-release.outputs.new-release-published }}
