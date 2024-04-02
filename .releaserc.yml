@@ -1,16 +1,13 @@
 branches: 
   - main
-  -
-    name: alpha
+  - name: alpha
     prerelease: true
 
 plugins:
   - '@semantic-release/commit-analyzer'
   - '@semantic-release/release-notes-generator'
   - '@semantic-release/github'
-  -
-    - '@semantic-release/exec'
-    -
-      successCmd: echo "new-release-published=true" >> "$GITHUB_OUTPUT"
-      failCmd: echo "new-release-published=false" >> "$GITHUB_OUTPUT"
-      verifyReleaseCmd: echo "release-version=${nextRelease.version}" >> "$GITHUB_OUTPUT"
+  - - '@semantic-release/exec'
+    - successCmd: echo "new-release-published=true" >> $GITHUB_OUTPUT
+      failCmd: echo "new-release-published=false" >> $GITHUB_OUTPUT
+      verifyReleaseCmd: echo "release-version=${nextRelease.version}" >> $GITHUB_OUTPUT
